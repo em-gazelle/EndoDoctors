@@ -5,7 +5,8 @@
       "iron-router": {},
       "spin": {},
       "accounts-ui-bootstrap-dropdown": {},
-      "iron-router-progress": {}
+      "iron-router-progress": {},
+      "jquery-rateit": {}
     },
     "packages": {
       "iron-router": {
@@ -27,6 +28,11 @@
         "git": "https://github.com/Multiply/iron-router-progress.git",
         "tag": "v0.2.0",
         "commit": "ce730d1d26feadb7c75ea25f22c5bfdb0c549a8b"
+      },
+      "jquery-rateit": {
+        "git": "https://github.com/dandv/meteor-jquery-rateit.git",
+        "tag": "v1.0.9",
+        "commit": "194607727589055e84cd4dfbb311d5a1bdadc6fe"
       }
     }
   }

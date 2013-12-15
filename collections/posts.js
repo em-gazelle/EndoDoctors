@@ -35,11 +35,41 @@ Meteor.methods({
 		userId: user._id,
 		author: user.username,
 		submitted: new Date().getTime(),
-		commentsCount:0
+		commentsCount:0,
+		upvoters: [], 
+	    votes: 0
 	});
 
 	var postId = Posts.insert(post);
 
 	return postId;
-	}
+	},
+
+	//upvoting
+		upvote: function(postId) {
+			var user = Meteor.user();
+			//ensure logged in
+			if (!user) 
+			{
+				throw new Meteor.Error(401, "You must login to rate this doctor!");
+				var post = Posts.findOne(postId);
+			}
+			if (!post) 
+			{
+				throw new Meteor.Error(422, 'Doctor not found');	
+			}
+			if (_.include(post.upvoters, user._id))
+			{
+				throw new Meteor.Error(422, "You've already rated this doctor!");
+			}
+
+			Posts.update({
+				_id: postId,
+				upvoters: {$ne: user._id}
+			}, {
+				$addToSet: {upvoters: user._id},
+				$inc: {votes: 1}
+			});
+			
+		}
 });
