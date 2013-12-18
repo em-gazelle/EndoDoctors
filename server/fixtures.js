@@ -19,8 +19,8 @@ if (Posts.find().count() === 0) {
     url: 'http://sachagreif.com/introducing-telescope/',
     submitted: now - 7 * 3600 * 1000,
     commentsCount: 2,
-    upvoters: [], 
-    votes: 0
+    raters: [], 
+    rating: 1
   });
 
   Comments.insert({
@@ -46,8 +46,8 @@ if (Posts.find().count() === 0) {
     url: 'http://meteor.com',
     submitted: now - 10 * 3600 * 1000,
     commentsCount: 0,
-    upvoters: [], 
-    votes: 0
+    raters: [], 
+    rating: 4
   });
 
   Posts.insert({
@@ -57,8 +57,8 @@ if (Posts.find().count() === 0) {
     url: 'http://themeteorbook.com',
     submitted: now - 12 * 3600 * 1000,
     commentsCount: 0,
-    upvoters: [], 
-    votes: 0
+    raters: [], 
+    rating: 3
 
   });
 
@@ -70,8 +70,8 @@ if (Posts.find().count() === 0) {
       url: 'http://en.wikipedia.org/wiki/Anything_You_Can_Do_%28song%29',
       submitted: now - i * 3600 * 1000,
       commentsCount: 0,
-      upvoters: [], 
-      votes: 5
+      raters: [], 
+      rating: 5
 
     });
   }

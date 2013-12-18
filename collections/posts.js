@@ -8,7 +8,7 @@ Posts.allow({
 Posts.deny({
 	update: function(userId, post, fieldNames) {
 		//may only edit the following fields:
-		return (_.without(fieldNames, 'url', 'title').length > 0);
+		return (_.without(fieldNames, 'url', 'title', 'rating').length > 0);
 	}
 });
 
@@ -30,13 +30,14 @@ Meteor.methods({
 		throw new Meteor.Error(302, "This doctor already exists in our system! Please add your review under this doctor's page.", postWithSameLink._id);
 }
 	//pick out whitelisted keys
-	var post = _.extend(_.pick(postAttributes, 'url', 'title', 'message'), {
+	var post = _.extend(_.pick(postAttributes, 'url', 'title', 'message', 'rating'), {
 		userId: user._id,
 		author: user.username,
 		submitted: new Date().getTime(),
 		commentsCount:0,
-		upvoters: [], 
-	    votes: 0
+		//rating = 0? rating = rating? Not working :(
+		raters: [], 
+	    rating: rating
 	});
 
 	var postId = Posts.insert(post);
@@ -45,7 +46,7 @@ Meteor.methods({
 	},
 
 	//upvoting
-		upvote: function(postId) {
+/*		upvote: function(postId) {
 			var user = Meteor.user();
 			//ensure logged in
 			if (!user) 
@@ -66,6 +67,6 @@ Meteor.methods({
 				$addToSet: {upvoters: user._id},
 				$inc: {votes: 1}
 			});
-			
-		}
+*/			
+		
 });

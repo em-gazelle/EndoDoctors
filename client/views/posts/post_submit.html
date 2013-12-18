@@ -1,25 +1,33 @@
 <template name="postSubmit">
   <form class="main">
     <div class="control-group">
-        <label class="control-label" for="url">URL</label>
+        <label class="control-label" for="url">Doctor's Name</label>
         <div class="controls">
-            <input name="url" type="text" value="" placeholder="Your URL"/>
+            <input name="url" type="text" value="" placeholder="Your Doctor"/>
         </div>
     </div>
 
     <div class="control-group">
-        <label class="control-label" for="title">Title</label>
+        <label class="control-label" for="title">Doctor's Location</label>
         <div class="controls">
-            <input name="title" type="text" value="" placeholder="Name your post"/>
+            <input name="title" type="text" value="" placeholder="City, State"/>
         </div>
     </div>
 
     <div class="control-group">
-        <label class="control-label" for="message">Message</label>
+        <label class="control-label" for="message">Your Review</label>
         <div class="controls">
-            <textarea name="message" type="text" value=""/>
+            <textarea name="message" type="text" value="" placeholder="Specifically, how would your rate your doctor's knowledge of, experience with, and empathy for those with Endometriosis?"/>
         </div>
     </div> 
+
+    <div class="control-group">
+        <label class="control-label" for="rating">Rate your Doctor!</label>
+        <div class="controls">
+            <input name="rating" type="range" min="0" max="5" step="1" onchange="ratedas.value=value;" />
+            <output type="text" id="ratedas" value="" />
+        </div>
+    </div>
 
     <div class="control-group">
         <div class="controls">

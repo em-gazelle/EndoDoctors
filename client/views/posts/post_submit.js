@@ -2,10 +2,12 @@ Template.postSubmit.events({
   'submit form': function(e) {
     e.preventDefault();
 
+
     var post = {
       url: $(e.target).find('[name=url]').val(),
       title: $(e.target).find('[name=title]').val(),
-      message: $(e.target).find('[name=message]').val()
+      message: $(e.target).find('[name=message]').val(),
+      rating: $(e.target).find('[name=rating]').val()
     }
 
     post._id = Posts.insert(post);
@@ -27,3 +29,6 @@ Template.postSubmit.events({
     });
   }
 });
+
+//step one for the rating system, help used
+//http://mobile-web-app.blogspot.com/2012/03/easy-display-value-for-of-slider-in.html
