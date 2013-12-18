@@ -18,9 +18,7 @@ if (Posts.find().count() === 0) {
     author: sacha.profile.name,
     url: 'http://sachagreif.com/introducing-telescope/',
     submitted: now - 7 * 3600 * 1000,
-    commentsCount: 2,
-    raters: [], 
-    rating: 1
+    commentsCount: 2
   });
 
   Comments.insert({
@@ -45,9 +43,7 @@ if (Posts.find().count() === 0) {
     author: tom.profile.name,
     url: 'http://meteor.com',
     submitted: now - 10 * 3600 * 1000,
-    commentsCount: 0,
-    raters: [], 
-    rating: 4
+    commentsCount: 0
   });
 
   Posts.insert({
@@ -56,9 +52,7 @@ if (Posts.find().count() === 0) {
     author: tom.profile.name,
     url: 'http://themeteorbook.com',
     submitted: now - 12 * 3600 * 1000,
-    commentsCount: 0,
-    raters: [], 
-    rating: 3
+    commentsCount: 0
 
   });
 
@@ -69,9 +63,7 @@ if (Posts.find().count() === 0) {
       userId: sacha._id,
       url: 'http://en.wikipedia.org/wiki/Anything_You_Can_Do_%28song%29',
       submitted: now - i * 3600 * 1000,
-      commentsCount: 0,
-      raters: [], 
-      rating: 5
+      commentsCount: 0
 
     });
   }
