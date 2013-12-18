@@ -3,7 +3,6 @@ Posts = new Meteor.Collection('posts');
 Posts.allow({
 	update: ownsDocument,
 	remove: ownsDocument
-	
 });
 
 Posts.deny({
@@ -19,12 +18,12 @@ Meteor.methods({
 			postWithSameLink = Posts.findOne({url: postAttributes.url});
 	//ensure the user is logged in
 	if (!user)
-		throw new Meteor.Error(401, "Sorry! You need to login to review a doctor.");
+{		throw new Meteor.Error(401, "Sorry! You need to login to review a doctor.");
 
-	//post must have a Dr's name
+}	//post must have a Dr's name
 	if (!postAttributes.title)
-		throw new Meteor.Error(422, "Please add the name of the doctor you wish to review.");
-
+{		throw new Meteor.Error(422, "Please add the name of the doctor you wish to review.");
+}
 	//no repeats - doc name
 	//!!!!!!!!!! will need more work in future. find a way to differentiate amongst doctors
 	if (postAttributes.url && postWithSameLink) {
@@ -63,10 +62,7 @@ Meteor.methods({
 				throw new Meteor.Error(422, "You've already rated this doctor!");
 			}
 
-			Posts.update({
-				_id: postId,
-				upvoters: {$ne: user._id}
-			}, {
+			Posts.update(post._id, {
 				$addToSet: {upvoters: user._id},
 				$inc: {votes: 1}
 			});

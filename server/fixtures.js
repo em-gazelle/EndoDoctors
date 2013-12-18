@@ -57,7 +57,7 @@ if (Posts.find().count() === 0) {
     url: 'http://themeteorbook.com',
     submitted: now - 12 * 3600 * 1000,
     commentsCount: 0,
-  upvoters: [], 
+    upvoters: [], 
     votes: 0
 
   });
@@ -70,8 +70,8 @@ if (Posts.find().count() === 0) {
       url: 'http://en.wikipedia.org/wiki/Anything_You_Can_Do_%28song%29',
       submitted: now - i * 3600 * 1000,
       commentsCount: 0,
-      upvoteres: [], 
-      votes: 0
+      upvoters: [], 
+      votes: 5
 
     });
   }
