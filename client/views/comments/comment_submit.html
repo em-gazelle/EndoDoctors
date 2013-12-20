@@ -4,8 +4,15 @@
 			<div class="controls">
 				<label for="body">Review this doctor</label>
 				<textarea name="body"></textarea>
+
+				<label for="rangeinput">Rating</label>
+					<input id="rangeinput" type="range" min="1" max="5" value="3" step="1" onchange="rangevalue.value=value"></input>
+					<output id="rangevalue"></output>
+
 			</div>
 		</div>
+
+
 		<div class="control-group">
 			<div class="controls">
 				<button type="submit" class="btn">Post Review</button>

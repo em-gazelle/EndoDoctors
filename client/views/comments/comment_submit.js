@@ -2,6 +2,10 @@ Template.commentSubmit.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
+ function updateTextInput(val) {
+      document.getElementById('textInput').value=val; 
+    }
+
     var $body = $(e.target).find('[name=body]');
     var comment = {
       body: $body.val(),
