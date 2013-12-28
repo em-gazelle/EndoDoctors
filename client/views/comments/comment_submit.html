@@ -2,12 +2,21 @@
 	<form name="comment" class="comment-form">
 		<div class="control-group">
 			<div class="controls">
-				<label for="body">Review this doctor</label>
-				<textarea name="body"></textarea>
+			<h4> Review this Doctor! </h4>	
 
-				<label for="rangeinput">Rating</label>
-					<input id="rangeinput" type="range" min="1" max="5" value="3" step="1" onchange="rangevalue.value=value"></input>
-					<output id="rangevalue"></output>
+				<label for="empathy">Please rate this doctor's level of empathy:</label>
+				<textarea name="empathy"></textarea>
+
+				<label for="expectations">What treatment did you seek?</label>
+				<textarea name="expectations"></textarea>
+
+				<label for="specificKnowledge">How would you rate their knowledge of current treatments? <br /> Did they discuss laparascopic excision surgery, Depo, birth control, lifestyle changes, etc. ? </label>
+				<textarea name="specificKnowledge"></textarea>
+
+
+				<label for="rating">Rating</label>
+					<input id="rating" type="range" min="1" max="5" value="3" step="1" onchange="ratedas.value=value"></input>
+					<output id="ratedas"></output>
 
 			</div>
 		</div>
