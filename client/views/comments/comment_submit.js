@@ -4,9 +4,12 @@ Template.commentSubmit.events({
 
     var $body = $(e.target).find('[name=empathy]');
     var $expectations = $(e.target).find('[name=expectations]');
-    
+    var $specificKnowledge = $(e.target).find('[name=specificKnowledge]');
+
     var comment = {
       body: $body.val(),
+      expectations: $expectations.val(),
+      specificKnowledge: $specificKnowledge.val(),
       postId: template.data._id
     };
 
