@@ -7,14 +7,16 @@ Meteor.methods({
 		var user = Meteor.user();
 		var post = Posts.findOne(commentAttributes.postId);
 
+/* ERROR REPORTING -- REMOVED, TEMPORARILY, FOR DEBUGGING AND CHANGING BODY TO EMPATHY PURPOSES
+
 		if (!user)
 			{throw new Meteor.Error(401, "Please login to submit a review."); }
 		if (!commentAttributes.body)
 			{throw new Meteor.Error(422, "Oops. Please finish writing your review!"); }
 		if (!commentAttributes.postId)
 			{throw new Meteor.Error(422, "You must review a doctor."); }
-
-		comment = _.extend(_.pick(commentAttributes, 'postId', 'body', 'expectations', 'specificKnowledge'), {
+*/
+		comment = _.extend(_.pick(commentAttributes, 'postId', 'empathy', 'specificKnowledge', 'expectations'), {
 			userId: user._id,
 			author: user.username,
 			submitted: new Date().getTime()

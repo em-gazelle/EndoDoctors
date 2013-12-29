@@ -26,16 +26,13 @@ if (Posts.find().count() === 0) {
     userId: tom._id,
     author: tom.profile.name,
     submitted: now - 5 * 3600 * 1000,
-    body: 'Interesting project Sacha, can I get involved?'
+    empathy: 'this doc was TERRIBLE',
+    expectations: 'well, I knew not what I needed',
+    specificKnowledge: 'ummmm, he knew nothing'
+
+/*    body: 'Interesting project Sacha, can I get involved?' */
   });
 
-  Comments.insert({
-    postId: telescopeId,
-    userId: sacha._id,
-    author: sacha.profile.name,
-    submitted: now - 3 * 3600 * 1000,
-    body: 'You sure can Tom!'
-  });
 
   Posts.insert({
     title: 'Meteor',
