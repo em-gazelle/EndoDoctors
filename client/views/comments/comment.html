@@ -5,9 +5,24 @@
 			<span class="result">rated this doctor a {{rating}} {{ratedas}} out of 5 </span>
 			<span class="date"> on {{submittedText}} </span>
 		</h4>
-		<p> {{body}} </p>
-		<p> {{specificKnowledge}} </p>
-		<p> {{expectations}} </p>
+		
+		<div id="comment-info">
+
+		<div>
+			<h5> Empathy: </h5>
+			<p> {{body}} </p>
+		</div>
+
+		<div>
+			<h5> Endo-Specific Knowledge: </h5>
+			<p> {{specificKnowledge}} </p>
+		</div>
+
+		<div>
+			<h5> Treatment Sought: </h5>
+			<p> {{expectations}} </p>
+		</div>
+	</div>
 
 	</li>
 </template>
