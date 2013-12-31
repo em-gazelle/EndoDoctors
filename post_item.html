@@ -1,0 +1,15 @@
+<template name="postItem">
+  <div class="post">
+    <a href="#" class="rating"></a>
+    <div class="post-content">
+      <h3> {{doctor}} <span> {{doctor_location}} </span> </h3>
+
+      <p>  
+    		submitted by {{author}},
+    		<a href="{{pathFor 'postPage'}}">{{commentsCount}} sisters have reviewed this doctor</a>
+    		{{#if ownPost}}<a href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
+    	</p>
+    </div>
+    <a href="{{pathFor 'postPage'}}" class="discuss btn">Reviews</a>
+  </div>
+</template>
