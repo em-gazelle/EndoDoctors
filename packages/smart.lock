@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "jquery-rateit": {}
+    },
+    "packages": {
+      "jquery-rateit": {
+        "git": "https://github.com/dandv/meteor-jquery-rateit.git",
+        "tag": "v1.0.9",
+        "commit": "194607727589055e84cd4dfbb311d5a1bdadc6fe"
+      }
+    }
+  }
+}

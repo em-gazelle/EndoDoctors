@@ -13,10 +13,32 @@
 				<label for="expectations">What treatment did you seek?</label>
 				<textarea name="expectations"></textarea>
 
+
+
+				<label for="rateit_stars">RatingStars</label>
+					<div class="rateit">
+					</div>
+				</label>
+
+			<div class="rateit" id="rateit5" data-rateit-min="2">
+</div>
+<div>
+    <span id="value5"></span>
+    <span id="hover5"></span>
+</div>
+ 
+<script type="text/javascript">
+    $("#rateit5").bind('rated', function (event, value) { $('#value5').text('You\'ve rated it: ' + value); });
+    $("#rateit5").bind('reset', function () { $('#value5').text('Rating reset'); });
+    $("#rateit5").bind('over', function (event, value) { $('#hover5').text('Hovering over: ' + value); });
+</script>         
+
+
+
+
 				<label for="rating">Rating</label>
 					<input id="rating" type="range" min="1" max="5" value="3" step="1" onchange="ratedas.value=value"></input>
 					<output id="ratedas"></output>
-
 			</div>
 		</div>
 

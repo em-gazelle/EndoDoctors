@@ -1,4 +1,31 @@
 #comment-info {
 padding-left: 20px;
+}
 
+.searchnav {
+	list-style:none;
+}
+
+.headermine {
+	list-style: none;
+}
+
+#myTitle a {
+	text-decoration: none;
+	color: white;
+}
+
+#myTitle {
+	text-align: center;
+	font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
+}
+
+.sisters_reviewing {
+	text-decoration: none;
+	color: maroon;
+}
+
+.sisters_reviewing:hover {
+	color: #823a2b ;
+	text-decoration:none;
 }

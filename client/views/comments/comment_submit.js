@@ -5,6 +5,10 @@ Template.commentSubmit.events({
     var $empathy = $(e.target).find('[name=empathy]');
     var $expectations = $(e.target).find('[name=expectations]');
     var $specificKnowledge = $(e.target).find('[name=specificKnowledge]');
+   
+
+    $(function () { $('#rateit6').rateit({ max: 20, step: 2, backingfld: '#backing6' }); });
+
 
     var comment = {
       empathy: $empathy.val(),

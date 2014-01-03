@@ -4,64 +4,55 @@ if (Posts.find().count() === 0) {
 
   // create two users
   var tomId = Meteor.users.insert({
-    profile: { name: 'Tom Coleman' }
+    profile: { name: 'Anna Salazar' }
   });
+ 
   var tom = Meteor.users.findOne(tomId);
+
   var sachaId = Meteor.users.insert({
-    profile: { name: 'Sacha Greif' }
+    profile: { name: 'EndoGurl Warrior' }
   });
   var sacha = Meteor.users.findOne(sachaId);
 
-  var telescopeId = Posts.insert({
-    title: 'Introducing Telescope',
+
+//insert posts
+
+  var SanchezId = Posts.insert({
+    doctor: 'Dr. Sanchez',
     userId: sacha._id,
     author: sacha.profile.name,
-    url: 'http://sachagreif.com/introducing-telescope/',
+    doctor_location: 'Houston, TX',
     submitted: now - 7 * 3600 * 1000,
-    commentsCount: 2
+    commentsCount: 1
   });
 
   Comments.insert({
-    postId: telescopeId,
+    postId: SanchezId,
     userId: tom._id,
     author: tom.profile.name,
     submitted: now - 5 * 3600 * 1000,
-    empathy: 'this doc was TERRIBLE',
-    expectations: 'well, I knew not what I needed',
-    specificKnowledge: 'ummmm, he knew nothing'
-
-/*    body: 'Interesting project Sacha, can I get involved?' */
+    empathy: 'Dr. Sanchez was wonderful, caring, compassionate, articulate, and did not hesitate to say when she lacked knowledge on a subject.',
+    expectations: 'She was the first doctor to recognize my symptoms of Endo and helped manage my symptoms in a time of desperate need.',
+    specificKnowledge: 'Her first prescribed treatment (BC) was successful while I was under her care.'
   });
 
-
-  Posts.insert({
-    title: 'Meteor',
+var Nezhat_id = Posts.insert({
+    doctor: 'Dr. Nezhat',
     userId: tom._id,
     author: tom.profile.name,
-    url: 'http://meteor.com',
-    submitted: now - 10 * 3600 * 1000,
-    commentsCount: 0
-  });
-
-  Posts.insert({
-    title: 'The Meteor Book',
-    userId: tom._id,
-    author: tom.profile.name,
-    url: 'http://themeteorbook.com',
+    doctor_location: 'San Jose, CA',
     submitted: now - 12 * 3600 * 1000,
-    commentsCount: 0
-
+    commentsCount: 1
   });
 
-  for (var i=0; i<11; i++) {
-    Posts.insert({
-      title: 'I am better than you! How much better? ' + i + " million times better!",
-      author: sacha.profile.name,
-      userId: sacha._id,
-      url: 'http://en.wikipedia.org/wiki/Anything_You_Can_Do_%28song%29',
-      submitted: now - i * 3600 * 1000,
-      commentsCount: 0
+Comments.insert({
+  postId: Nezhat_id,
+  userId: sacha._id,
+  author: sacha.profile.name,
+  submitted: now - 2 * 1200 * 100,
+  empathy: 'How beautiful it was to finally meet an understanding, compassionate doctor! He listened to everything I said and did not question my judgment, only provided guidance',
+  expectations: 'I expected Dr. Nezhat to permanently diminish my symptoms via laparascopic excisioin surgery. So far, it is working!',
+  specificKnowledge: 'Dr. Nezhat was extraordinarily knowledgeable; what a relief! His surgical expertise is also, of course, unparalleled.'
+});
 
-    });
-  }
 }

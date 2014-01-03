@@ -2,11 +2,11 @@
   <div class="post">
     <a href="#" class="rating"></a>
     <div class="post-content">
-      <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
-    	<p>
-        
+      <h3> {{doctor}} <span> {{doctor_location}} </span> </h3>
+
+      <p>  
     		submitted by {{author}},
-    		<a href="{{pathFor 'postPage'}}">{{commentsCount}} sisters have reviewed this doctor</a>
+    		<a href="{{pathFor 'postPage'}}" class="sisters_reviewing">{{commentsCount}} sisters have reviewed this doctor</a>
     		{{#if ownPost}}<a href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
     	</p>
     </div>
