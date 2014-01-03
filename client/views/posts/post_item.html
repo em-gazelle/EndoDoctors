@@ -6,7 +6,7 @@
 
       <p>  
     		submitted by {{author}},
-    		<a href="{{pathFor 'postPage'}}" class="sisters_reviewing">{{commentsCount}} sisters have reviewed this doctor</a>
+    		<a href="{{pathFor 'postPage'}}" class="sisters_reviewing">{{pluralize commentsCount "sister"}} reviewed this doctor</a>
     		{{#if ownPost}}<a href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
     	</p>
     </div>
