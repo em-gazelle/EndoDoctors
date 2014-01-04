@@ -16,7 +16,7 @@ Meteor.methods({
 		if (!commentAttributes.postId)
 			{throw new Meteor.Error(422, "You must review a doctor."); }
 */
-		comment = _.extend(_.pick(commentAttributes, 'postId', 'empathy', 'specificKnowledge', 'expectations'), {
+		comment = _.extend(_.pick(commentAttributes, 'postId', 'empathy', 'specificKnowledge', 'expectations', 'ratedas'), {
 			userId: user._id,
 			author: user.username,
 			submitted: new Date().getTime()

@@ -33,7 +33,8 @@ if (Posts.find().count() === 0) {
     submitted: now - 5 * 3600 * 1000,
     empathy: 'Dr. Sanchez was wonderful, caring, compassionate, articulate, and did not hesitate to say when she lacked knowledge on a subject.',
     expectations: 'She was the first doctor to recognize my symptoms of Endo and helped manage my symptoms in a time of desperate need.',
-    specificKnowledge: 'Her first prescribed treatment (BC) was successful while I was under her care.'
+    specificKnowledge: 'Her first prescribed treatment (BC) was successful while I was under her care.',
+    ratedas: 3.5
   });
 
 var Nezhat_id = Posts.insert({
@@ -52,7 +53,8 @@ Comments.insert({
   submitted: now - 2 * 1200 * 100,
   empathy: 'How beautiful it was to finally meet an understanding, compassionate doctor! He listened to everything I said and did not question my judgment, only provided guidance',
   expectations: 'I expected Dr. Nezhat to permanently diminish my symptoms via laparascopic excisioin surgery. So far, it is working!',
-  specificKnowledge: 'Dr. Nezhat was extraordinarily knowledgeable; what a relief! His surgical expertise is also, of course, unparalleled.'
+  specificKnowledge: 'Dr. Nezhat was extraordinarily knowledgeable; what a relief! His surgical expertise is also, of course, unparalleled.',
+  ratedas: 5
 });
 
 }
