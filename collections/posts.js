@@ -30,14 +30,16 @@ Meteor.methods({
 		throw new Meteor.Error(302, "This doctor already exists in our system! Please add your review under this doctor's page.", postWithSameLink._id);
 }
 	//pick out whitelisted keys
-	var post = _.extend(_.pick(postAttributes, 'doctor', 'doctor_location', 'message'), {
+	var post = _.extend(_.pick(postAttributes, 'doctor', 'doctor_location'), {
 		userId: user._id,
 		author: user.username,
 		submitted: new Date().getTime(),
 		commentsCount:0,
+		totalrating: 0
 		//rating = 0? rating = rating? Not working :()
 		
 	});
+		
 
 	var postId = Posts.insert(post);
 

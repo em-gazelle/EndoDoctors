@@ -22,8 +22,13 @@ Meteor.methods({
 			submitted: new Date().getTime()
 		});
 		//update post with #of comments
-		Posts.update(comment.postId, {$inc: {commentsCount: 1}});
-		
+		Posts.update(comment.postId, {
+			$inc: {commentsCount: 1}
+		});
+
+		Posts.update(comment.postId, {
+			$inc: {totalrating: 1}
+		});
 
 		//create comment, save _id
 		comment._id = Comments.insert(comment);

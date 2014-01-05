@@ -31,7 +31,8 @@ if (Posts.find().count() === 0) {
     author: sacha.profile.name,
     doctor_location: 'Houston, TX',
     submitted: now - 7 * 3600 * 1000,
-    commentsCount: 2
+    commentsCount: 2,
+    totalrating: 7.5
   });
 
   Comments.insert({
@@ -63,7 +64,8 @@ var NezhatId = Posts.insert({
     author: tom.profile.name,
     doctor_location: 'San Jose, CA',
     submitted: now - 12 * 3600 * 1000,
-    commentsCount: 1
+    commentsCount: 1,
+    totalrating: 5
   });
 
 Comments.insert({
@@ -83,7 +85,8 @@ Comments.insert({
     author: motivation.profile.name,
     doctor_location: 'Gable Springs, IN',
     submitted: now - 55 * 3600 * 1000,
-    commentsCount: 2
+    commentsCount: 2,
+    totalrating: 2
   });
 
   Comments.insert({
@@ -94,7 +97,8 @@ Comments.insert({
     empathy: 'Dr. Somebody told me it was all in my head. I wish he was right, because getting through school is hard when I spend all day puking in the bathroom or passed out in pain.',
     expectations: 'I just wanted to be able to learn algebra and feel better. Not losing weight every time I get my period would be nice, too.',
     specificKnowledge: 'EndoWhat?',
-    ratedas: 1
+    ratedas: 1,
+    totalrating: 2
   });
 
   Comments.insert({
@@ -114,7 +118,8 @@ Comments.insert({
     author: motivation.profile.name,
     doctor_location: 'Gable Springs, IN',
     submitted: now - 55 * 3600 * 1000,
-    commentsCount: 2
+    commentsCount: 2,
+    totalrating: 2
   });
 
   Comments.insert({
@@ -145,7 +150,8 @@ Comments.insert({
     author: motivation.profile.name,
     doctor_location: 'Gable Springs, IN',
     submitted: now - 55 * 3600 * 1000,
-    commentsCount: 2
+    commentsCount: 2,
+    totalrating: 2
   });
 
   Comments.insert({
@@ -176,7 +182,8 @@ Comments.insert({
     author: motivation.profile.name,
     doctor_location: 'Gable Springs, IN',
     submitted: now - 55 * 3600 * 1000,
-    commentsCount: 2
+    commentsCount: 2,
+    totalrating: 2
   });
 
   Comments.insert({
