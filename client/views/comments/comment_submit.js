@@ -1,27 +1,8 @@
 Template.commentSubmit.events({
   'submit form': function(e, template) {
     e.preventDefault();
-      $(function() {
-         var slider = $('#slider'),
-          min = slider.attr('min'),
-          max=slider.attr('max'),
-          ratedas = $('#ratedas');
 
-          slider.hide();
 
-    $('#control').knobKnob({
-        snap : 10,
-        value: 250,
-        turn : function(ratio){
-            // Changing the value of the hidden slider
-            slider.val(Math.round(ratio*(max-min) + min));
-
-            // Updating the current value text
-            ratedas.html(slider.val());
-        }
-    });
-
-});
 
 
     var $empathy = $(e.target).find('[name=empathy]');

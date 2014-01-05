@@ -13,4 +13,5 @@ Template.postItem.helpers({
 		return Comments.find({postId: this._id}).count();
 */
 
+
 });
