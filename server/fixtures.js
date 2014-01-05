@@ -14,6 +14,15 @@ if (Posts.find().count() === 0) {
   });
   var sacha = Meteor.users.findOne(sachaId);
 
+  var toomanyId = Meteor.users.insert({
+    profile: { name: 'Average woman for 10 years'}
+  });
+  var toomany = Meteor.users.findOne(toomany);
+
+  var motivationId = Meteor.users.insert({
+    profile: { name: 'inspiration'}
+  });
+  var motivation = Meteor.users.findOne(motivationId);
 
 //insert posts
 
@@ -23,7 +32,7 @@ if (Posts.find().count() === 0) {
     author: sacha.profile.name,
     doctor_location: 'Houston, TX',
     submitted: now - 7 * 3600 * 1000,
-    commentsCount: 1
+    commentsCount: 2
   });
 
   Comments.insert({
@@ -36,6 +45,18 @@ if (Posts.find().count() === 0) {
     specificKnowledge: 'Her first prescribed treatment (BC) was successful while I was under her care.',
     ratedas: 3.5
   });
+
+  Comments.insert({
+    postId: SanchezId,
+    userId: toomany._id,
+    author: toomany.profile.name,
+    submitted: now - 20 * 3600 * 1000,
+    empathy: 'I was upset to learn that I had been needlesly suffering, mocked, and struggling through classes I have not been physically capable of attendeding for the past 8 years. She was very understanding and sympathetic.',
+    expectations: 'Wow! Doctors, family, and society has told me that my pain, inability to attend class, work, and the temporary starvation I undergo every month were normal! Dr. Sanchez was the first to tell me that I have the right to expect a life in which I can stay in school, work, and do not suffer through pain on a daily basis!',
+    specificKnowledge: 'She gave me the name of the disease, recommended I do additional research, and started me on BC and anti-nauseau pills as the first line of defense. She has given me a referral to a specialist if it does not.',
+    ratedas: 4
+  });
+
 
 var Nezhat_id = Posts.insert({
     doctor: 'Dr. Nezhat',
@@ -57,4 +78,34 @@ Comments.insert({
   ratedas: 5
 });
 
+  var sampledocId = Posts.insert({
+    doctor: 'Dr. Somebody',
+    userId: motivation._id,
+    author: motivation.profile.name,
+    doctor_location: 'Gable Springs, IN',
+    submitted: now - 55 * 3600 * 1000,
+    commentsCount: 2
+  });
+
+  Comments.insert({
+    postId: sampledocId,
+    userId: motivation._id,
+    author: motivation.profile.name,
+    submitted: now - 33 * 3600 * 1000,
+    empathy: 'Dr. Somebody told me it was all in my head. I wish he was right, because getting through school is hard when I spend all day puking in the bathroom or passed out in pain.',
+    expectations: 'I just wanted to be able to learn algebra and feel better. Not losing weight every time I get my period would be nice, too.',
+    specificKnowledge: 'EndoWhat?',
+    ratedas: 1
+  });
+
+  Comments.insert({
+    postId: sampledocId,
+    userId: toomany._id,
+    author: motivation.profile.name,
+    submitted: now - 43 * 3600 * 1000,
+    empathy: 'He laughed at me and bemoaned the state of women these days, insisting I was making it up. My low heart rate did not seem to phase him at all.',
+    expectations: 'I was not doing very well in classes and just wanted my symptoms to be treated so that I could go to class. Throwing up for a week each month must not be good for my body, surely?',
+    specificKnowledge: 'He told me that getting pregnant would cure me.',
+    ratedas: 1
+  });
 }

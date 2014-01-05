@@ -23,7 +23,6 @@ Meteor.methods({
 		});
 		//update post with #of comments
 		Posts.update(comment.postId, {$inc: {commentsCount: 1}});
-		Posts.update(comment.postId, {$inc: {ratedas: 100}});
 		
 
 		//create comment, save _id
