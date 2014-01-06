@@ -27,6 +27,10 @@ Meteor.methods({
 		});
 
 		Posts.update(comment.postId, {
+			$inc: {totalrating_possible: 5}
+		});
+
+		Posts.update(comment.postId, {
 			$inc: {totalrating: 1}
 		});
 

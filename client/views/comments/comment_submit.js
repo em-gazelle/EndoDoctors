@@ -11,7 +11,6 @@ Template.commentSubmit.events({
     var $ratedas = $(e.target).find('[name=ratedas]');
 
 
-
     var comment = {
       empathy: $empathy.val(),
       expectations: $expectations.val(),

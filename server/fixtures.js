@@ -32,7 +32,8 @@ if (Posts.find().count() === 0) {
     doctor_location: 'Houston, TX',
     submitted: now - 7 * 3600 * 1000,
     commentsCount: 2,
-    totalrating: 7.5
+    totalrating: 7.5,
+    totalrating_possible: 10
   });
 
   Comments.insert({
@@ -65,7 +66,8 @@ var NezhatId = Posts.insert({
     doctor_location: 'San Jose, CA',
     submitted: now - 12 * 3600 * 1000,
     commentsCount: 1,
-    totalrating: 5
+    totalrating: 5,
+    totalrating_possible: 5
   });
 
 Comments.insert({
@@ -86,7 +88,8 @@ Comments.insert({
     doctor_location: 'Gable Springs, IN',
     submitted: now - 55 * 3600 * 1000,
     commentsCount: 2,
-    totalrating: 2
+    totalrating: 2,
+    totalrating_possible: 10
   });
 
   Comments.insert({
@@ -98,7 +101,8 @@ Comments.insert({
     expectations: 'I just wanted to be able to learn algebra and feel better. Not losing weight every time I get my period would be nice, too.',
     specificKnowledge: 'EndoWhat?',
     ratedas: 1,
-    totalrating: 2
+    totalrating: 2,
+    totalrating_possible: 10
   });
 
   Comments.insert({
@@ -119,7 +123,8 @@ Comments.insert({
     doctor_location: 'Gable Springs, IN',
     submitted: now - 55 * 3600 * 1000,
     commentsCount: 2,
-    totalrating: 2
+    totalrating: 2,
+    totalrating_possible: 10
   });
 
   Comments.insert({
@@ -151,7 +156,8 @@ Comments.insert({
     doctor_location: 'Gable Springs, IN',
     submitted: now - 55 * 3600 * 1000,
     commentsCount: 2,
-    totalrating: 2
+    totalrating: 2,
+    totalrating_possible: 10
   });
 
   Comments.insert({
@@ -183,7 +189,8 @@ Comments.insert({
     doctor_location: 'Gable Springs, IN',
     submitted: now - 55 * 3600 * 1000,
     commentsCount: 2,
-    totalrating: 2
+    totalrating: 2,
+    totalrating_possible: 5
   });
 
   Comments.insert({

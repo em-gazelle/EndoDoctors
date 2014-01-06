@@ -37,10 +37,14 @@
                         <a href="{{pathFor 'bestPosts'}}" id="highpost">Most Highly Rated</a>
                     </li>
 
-    			{{#if currentUser}}
                 	<li class="{{activeRouteClass 'postSubmit'}}">
                         <a href="{{pathFor 'postSubmit'}}" id="submitpost">Don't see your doctor on the list? Add yours!</a></li>
-    			    <li class="dropdown">
+
+                  <li class="{{activeRouteClass 'about'}}">
+                    <a href="{{pathFor 'about'}}">About</a></li>
+                    
+          {{#if currentUser}}
+              <li class="dropdown">
                         {{> notifications}}
                     </li>
                 {{/if}}

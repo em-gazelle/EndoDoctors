@@ -35,7 +35,8 @@ Meteor.methods({
 		author: user.username,
 		submitted: new Date().getTime(),
 		commentsCount:0,
-		totalrating: 0
+		totalrating: 0,
+		totalrating_possible: 0
 		//rating = 0? rating = rating? Not working :()
 		
 	});

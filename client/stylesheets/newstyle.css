@@ -1,3 +1,18 @@
+.reference {
+  font-size:10px;
+  line-height: 10px;
+}
+/*   Giving up on centering a div :(;
+.listTitle {
+  text-align: center
+}
+
+.centeredLists {
+padding-left:160px;
+}
+
+*/
+
 #comment-info {
 padding-left: 20px;
 }
