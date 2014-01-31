@@ -2,10 +2,13 @@ Template.commentSubmit.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
-   var $empathy = $(e.target).find('[name=empathy]');
+    var $empathy = $(e.target).find('[name=empathy]');
     var $expectations = $(e.target).find('[name=expectations]');
     var $specificKnowledge = $(e.target).find('[name=specificKnowledge]');
-    var $ratedas = $(e.target).find('[name=ratedas]');
+    var $ratedas = $(e.target).find('[name=ratedas]');    
+
+ //   console.log("This is a test to see if ratedas is a number after being put into MongoDB: we want false");
+   // console.log(isNaN(ratedas));
 
     var comment = {
       empathy: $empathy.val(),

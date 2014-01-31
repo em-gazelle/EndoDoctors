@@ -8,7 +8,7 @@ Posts.allow({
 Posts.deny({
 	update: function(userId, post, fieldNames) {
 		//may only edit the following fields:
-		return (_.without(fieldNames, 'doctor', 'doctor_location').length > 0);
+		return (_.without(fieldNames, 'doctor', 'doctor_location', 'clinic').length > 0);
 	}
 });
 
@@ -30,7 +30,7 @@ Meteor.methods({
 		throw new Meteor.Error(302, "This doctor already exists in our system! Please add your review under this doctor's page.", postWithSameLink._id);
 }
 	//pick out whitelisted keys
-	var post = _.extend(_.pick(postAttributes, 'doctor', 'doctor_location'), {
+	var post = _.extend(_.pick(postAttributes, 'doctor', 'doctor_location', 'clinic'), {
 		userId: user._id,
 		author: user.username,
 		submitted: new Date().getTime(),
@@ -48,3 +48,4 @@ Meteor.methods({
 	}
 
 });
+

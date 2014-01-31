@@ -30,10 +30,11 @@ if (Posts.find().count() === 0) {
     userId: sacha._id,
     author: sacha.profile.name,
     doctor_location: 'Houston, TX',
+    clinic: 'Maker of the Young',
     submitted: now - 7 * 3600 * 1000,
     commentsCount: 2,
     totalrating: 7.5 / 2,
-    totalrating_possible: 10
+    totalrating_possible: 3.8
   });
 
   Comments.insert({
@@ -64,6 +65,7 @@ var NezhatId = Posts.insert({
     userId: tom._id,
     author: tom.profile.name,
     doctor_location: 'San Jose, CA',
+    clinic: 'Maker of the Young',
     submitted: now - 12 * 3600 * 1000,
     commentsCount: 1,
     totalrating: 5,
@@ -86,10 +88,11 @@ Comments.insert({
     userId: motivation._id,
     author: motivation.profile.name,
     doctor_location: 'Gable Springs, IN',
+    clinic: 'Maker of the Young',
     submitted: now - 55 * 3600 * 1000,
     commentsCount: 2,
     totalrating: 2 / 2,
-    totalrating_possible: 10
+    totalrating_possible: 1
   });
 
   Comments.insert({
@@ -101,8 +104,6 @@ Comments.insert({
     expectations: 'I just wanted to be able to learn algebra and feel better. Not losing weight every time I get my period would be nice, too.',
     specificKnowledge: 'EndoWhat?',
     ratedas: 1,
-    totalrating: 2,
-    totalrating_possible: 10
   });
 
   Comments.insert({
@@ -121,10 +122,11 @@ Comments.insert({
     userId: motivation._id,
     author: motivation.profile.name,
     doctor_location: 'Gable Springs, IN',
+    clinic: 'Maker of the Young',
     submitted: now - 55 * 3600 * 1000,
     commentsCount: 2,
-    totalrating: 2,
-    totalrating_possible: 10
+    totalrating: 1,
+    totalrating_possible: 1
   });
 
   Comments.insert({
@@ -154,10 +156,11 @@ Comments.insert({
     userId: motivation._id,
     author: motivation.profile.name,
     doctor_location: 'Gable Springs, IN',
+    clinic: 'Maker of the Young',
     submitted: now - 55 * 3600 * 1000,
     commentsCount: 2,
     totalrating: 2 / 2,
-    totalrating_possible: 10
+    totalrating_possible: 1
   });
 
   Comments.insert({
@@ -187,10 +190,11 @@ Comments.insert({
     userId: motivation._id,
     author: motivation.profile.name,
     doctor_location: 'Gable Springs, IN',
+    clinic: 'Maker of the Young',
     submitted: now - 55 * 3600 * 1000,
     commentsCount: 2,
     totalrating: 2 / 2,
-    totalrating_possible: 5
+    totalrating_possible: 1
   });
 
   Comments.insert({

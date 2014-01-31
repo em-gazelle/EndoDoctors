@@ -6,6 +6,7 @@ Template.postSubmit.events({
     var post = {
       doctor: $(e.target).find('[name=doctor]').val(),
       doctor_location: $(e.target).find('[name=doctor_location]').val(),
+      clinic: $(e.target).find('[name=clinic]').val()
     }
 
     post._id = Posts.insert(post);

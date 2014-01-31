@@ -26,51 +26,35 @@ Meteor.methods({
 			$inc: {commentsCount: 1}
 		});
 
-/*
-		Posts.update(comment.postId, {
-			$inc: {totalrating_possible: 5}
-		});
-*//*
-		Posts.update(comment.postId, {
-			$inc: {totalrating: 1}
-		});
-*/
 
-
-		//create comment, save _id
-		//comment._id = Comments.insert(comment);
-		//create notification when user's post has been commented upon or additional comments have been posted
-		//createCommentNotification(comment);
 		Comments.insert(comment);
 
 
-
-
-
+		//finding the average rating
 		var comments = Comments.find({
 			postId: comment.postId
 		}).fetch();
 
 		var sum = _.reduce(comments, function(total, comment) {
-			console.log(comment.ratedas);
-			console.log(_.isString(comment.ratedas));
+		//	console.log(comment.ratedas);
+		//	console.log(_.isString(comment.ratedas));
 			return total + Number(comment.ratedas);
 		}, 0);
 
-
-		console.log(comments);
-		console.log("sum: " + sum);
-		console.log(comments.length);
+		//tests to debug average rating system
+	//	console.log(comments);
+	//	console.log("sum: " + sum);
+	//	console.log(comments.length);
 
 		var totalrating = sum / comments.length ;
-		console.log("totalrating: " + totalrating);
+	//	console.log("totalrating: " + totalrating);
 
 		Posts.update(comment.postId, {
 			$set: {totalrating: totalrating}
 		});
 
 		var totalrating_possible = Math.round(totalrating*10) /10;
-		console.log("display rating rounded = " + totalrating_possible);
+	//	console.log("display rating rounded = " + totalrating_possible);
 
 		Posts.update(comment.postId, {
 			$set: {totalrating_possible: totalrating_possible}
