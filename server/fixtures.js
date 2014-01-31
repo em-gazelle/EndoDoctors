@@ -32,7 +32,7 @@ if (Posts.find().count() === 0) {
     doctor_location: 'Houston, TX',
     submitted: now - 7 * 3600 * 1000,
     commentsCount: 2,
-    totalrating: 7.5,
+    totalrating: 7.5 / 2,
     totalrating_possible: 10
   });
 
@@ -88,7 +88,7 @@ Comments.insert({
     doctor_location: 'Gable Springs, IN',
     submitted: now - 55 * 3600 * 1000,
     commentsCount: 2,
-    totalrating: 2,
+    totalrating: 2 / 2,
     totalrating_possible: 10
   });
 
@@ -156,7 +156,7 @@ Comments.insert({
     doctor_location: 'Gable Springs, IN',
     submitted: now - 55 * 3600 * 1000,
     commentsCount: 2,
-    totalrating: 2,
+    totalrating: 2 / 2,
     totalrating_possible: 10
   });
 
@@ -189,7 +189,7 @@ Comments.insert({
     doctor_location: 'Gable Springs, IN',
     submitted: now - 55 * 3600 * 1000,
     commentsCount: 2,
-    totalrating: 2,
+    totalrating: 2 / 2,
     totalrating_possible: 5
   });
 

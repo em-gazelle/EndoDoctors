@@ -35,28 +35,43 @@ Meteor.methods({
 			$inc: {totalrating: 1}
 		});
 */
-/*NOT ABLE TO SUBMIT, UNCOMMENT WHEN POSSIBLE
-		comments = Comments.find({
-			postId: comment.postId
-/*	,		fields: {
-				ratedas: 1
-			}
-*/
 
-/*SUBMIT PROBS
+
+		//create comment, save _id
+		//comment._id = Comments.insert(comment);
+		//create notification when user's post has been commented upon or additional comments have been posted
+		//createCommentNotification(comment);
+		Comments.insert(comment);
+
+
+
+
+
+		var comments = Comments.find({
+			postId: comment.postId
 		}).fetch();
 
-		sum = _.reduce(comments, function() {
-			var sum = function(total, comment) {
-				return total + comment.ratedas;
-			}
+		var sum = _.reduce(comments, function(total, comment) {
+			console.log(comment.ratedas);
+			console.log(_.isString(comment.ratedas));
+			return total + Number(comment.ratedas);
+		}, 0);
+
+
+		console.log(comments);
+		console.log("sum: " + sum);
+		console.log(comments.length);
+
+		var totalrating = sum / comments.length ;
+		console.log("totalrating: " + totalrating);
+
+		var displayrating = Math.round(totalrating*10) /10;
+		console.log("display rating rounded = " + displayrating);
+
+		Posts.update(comment.postId, {
+			$set: {totalrating: totalrating}
 		});
-*/
-		//create comment, save _id
-	//	comment._id = Comments.insert(comment);
-		//create notification when user's post has been commented upon or additional comments have been posted
-	//	createCommentNotification(comment);
-	//	return comment._id;
-		//return Comments.insert(comment);
+
+
 	}
 });

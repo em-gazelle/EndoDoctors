@@ -2,9 +2,7 @@ Template.commentSubmit.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
-    /*var $totalrating_possible = ratedas * 1 ;
-*/
-    var $empathy = $(e.target).find('[name=empathy]');
+   var $empathy = $(e.target).find('[name=empathy]');
     var $expectations = $(e.target).find('[name=expectations]');
     var $specificKnowledge = $(e.target).find('[name=specificKnowledge]');
     var $ratedas = $(e.target).find('[name=ratedas]');
