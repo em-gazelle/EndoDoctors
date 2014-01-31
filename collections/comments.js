@@ -30,16 +30,33 @@ Meteor.methods({
 		Posts.update(comment.postId, {
 			$inc: {totalrating_possible: 5}
 		});
-*/
+*//*
 		Posts.update(comment.postId, {
 			$inc: {totalrating: 1}
 		});
+*/
+/*NOT ABLE TO SUBMIT, UNCOMMENT WHEN POSSIBLE
+		comments = Comments.find({
+			postId: comment.postId
+/*	,		fields: {
+				ratedas: 1
+			}
+*/
 
+/*SUBMIT PROBS
+		}).fetch();
+
+		sum = _.reduce(comments, function() {
+			var sum = function(total, comment) {
+				return total + comment.ratedas;
+			}
+		});
+*/
 		//create comment, save _id
-		comment._id = Comments.insert(comment);
+	//	comment._id = Comments.insert(comment);
 		//create notification when user's post has been commented upon or additional comments have been posted
-		createCommentNotification(comment);
-		return comment._id;
+	//	createCommentNotification(comment);
+	//	return comment._id;
 		//return Comments.insert(comment);
 	}
 });
