@@ -65,11 +65,15 @@ Meteor.methods({
 		var totalrating = sum / comments.length ;
 		console.log("totalrating: " + totalrating);
 
-		var displayrating = Math.round(totalrating*10) /10;
-		console.log("display rating rounded = " + displayrating);
-
 		Posts.update(comment.postId, {
 			$set: {totalrating: totalrating}
+		});
+
+		var totalrating_possible = Math.round(totalrating*10) /10;
+		console.log("display rating rounded = " + totalrating_possible);
+
+		Posts.update(comment.postId, {
+			$set: {totalrating_possible: totalrating_possible}
 		});
 
 
