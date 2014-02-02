@@ -2,19 +2,18 @@
 	<li>
 		<h4>
 			<span class="author">{{author}}</span>
-			<span class="result">rated this doctor {{ratedas}} out of 5 </span>
 			<span class="date"> on {{submittedText}} </span>
 		</h4>
 		
 		<div id="comment-info">
 
 		<div>
-			<h5> Empathy: </h5>
+			<h5> Empathy: {{ratedas}} / 5 </h5>
 			<p> {{empathy}} </p>
 		</div>
 
 		<div>
-			<h5> Endo-Specific Knowledge: </h5>
+			<h5> Endo-Specific Knowledge: {{knowledgeRatedas}} / 5 </h5>
 			<p> {{specificKnowledge}} </p>
 		</div>
 
@@ -22,14 +21,6 @@
 			<h5> Treatment Sought: </h5>
 			<p> {{expectations}} </p>
 		</div>
-	
 
-		<div>
-			<h5> Overall Rating: </h5>
-			<p> {{ratedas}} / 5</p>
-		</div>
 	</div>
-
-
-	</li>
 </template>

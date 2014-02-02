@@ -16,7 +16,7 @@ Meteor.methods({
 		if (!commentAttributes.postId)
 			{throw new Meteor.Error(422, "You must review a doctor."); }
 */
-		comment = _.extend(_.pick(commentAttributes, 'postId', 'empathy', 'specificKnowledge', 'expectations', 'ratedas'), {
+		comment = _.extend(_.pick(commentAttributes, 'postId', 'empathy', 'specificKnowledge', 'expectations', 'ratedas', 'knowledgeRatedas'), {
 			userId: user._id,
 			author: user.username,
 			submitted: new Date().getTime()
@@ -35,6 +35,8 @@ Meteor.methods({
 			postId: comment.postId
 		}).fetch();
 
+//finding average rating for Empathy:
+		
 		var sum = _.reduce(comments, function(total, comment) {
 		//	console.log(comment.ratedas);
 		//	console.log(_.isString(comment.ratedas));
@@ -47,17 +49,55 @@ Meteor.methods({
 	//	console.log(comments.length);
 
 		var totalrating = sum / comments.length ;
-	//	console.log("totalrating: " + totalrating);
+		//	console.log("totalrating: " + totalrating);
 
 		Posts.update(comment.postId, {
-			$set: {totalrating: totalrating}
+			$set: {totalrating: totalrating},
 		});
 
+//empathy rounded:
 		var totalrating_possible = Math.round(totalrating*10) /10;
 	//	console.log("display rating rounded = " + totalrating_possible);
 
 		Posts.update(comment.postId, {
-			$set: {totalrating_possible: totalrating_possible}
+			$set: {totalrating_possible: totalrating_possible},
+		});
+
+
+
+//100% failure rate :(
+//finding average rating for Endo-Specific KNowledge:
+//		var knowledgeRatedas = Number(knowledgeRatedas);
+//		var knowledgeRatedas = Math.floor(knowledgeRatedas);
+//		var knowledgeRatedas = Number(comment.knowledgeRatedas);
+//		var knowledgeRatedas = Math.floor("knowledgeRatedas"); 
+
+
+
+		var knowlSum = _.reduce(comments, function(knowlTotal, comment) {
+		//	console.log(comment.ratedas);
+		//	console.log(_.isString(comment.ratedas));
+			return knowlTotal + Number(comment.knowledgeRatedas);
+		}, 0);
+
+		//tests to debug average rating system
+	//	console.log(comments);
+	//	console.log("sum: " + sum);
+	//	console.log(comments.length);
+
+		var knowledgeRating = knowlSum / comments.length ;
+		//	console.log("totalrating: " + totalrating);
+
+		Posts.update(comment.postId, {
+			$set: {knowledgeRating: knowledgeRating}
+		});
+
+//empathy rounded:
+		var knowledgeRatingRounded = Math.round(knowledgeRatingRounded*10) /10;
+	//	console.log("display rating rounded = " + totalrating_possible);
+
+		Posts.update(comment.postId, {
+			$set: {knowledgeRatingRounded: knowledgeRatingRounded}
 		});
 
 

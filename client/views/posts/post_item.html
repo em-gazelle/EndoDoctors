@@ -10,8 +10,31 @@
 -->
 <!--    		{{#if ownPost}}<a href="{{pathFor 'postEdit'}}">Edit</a>{{/if}}
 -->    	</p>
-      <p>  Rated an average of {{totalrating_possible}} / 5 </p>
-      <p> Median! </p>
+  
+  <!--    <p> ...was rated an average of {{totalrating_possible}} out of 5 on Empathy. 
+        Empathy: Average Rating: {{totalrating_possible}} / 5  </p> 
+      <p> {{doctor}}'s Endo-Specific Knowledge was rated an average of XX / 5. Endo-Specific Knowledge: Average Rating: XX / 5  </p>
+  -->
+
+      <p> {{doctor}} received an average rating of <span class="PostBolder"> {{totalrating_possible}} for Empathy </span> and a <span class="PostBolder"> {{knowledgeRating}} for Endo-Specific Knowledge. </span> </p>
+
+
+
+
+
+      <!--!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+              immporttttannttttt!!!!!!!!!!!!!! knowledgeRating has been swapped for knowledgeRatingRounded until NaN is fixed
+              !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+          replace, please, when it is. -->
+
+
+
+
+
+       <!--Future Work: Click here for a full statistical analysis! including median--> 
+
+      <p> <em>Ratings based off of {{commentsCount}} reviews and rated out of a max of 5. </em>    
     </div>
     <a href="{{pathFor 'postPage'}}" class="discuss btn">Reviews</a>
   </div>

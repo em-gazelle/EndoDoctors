@@ -4,33 +4,59 @@
 			<div class="controls">
 				<h4> Review this Doctor! </h4>	
 				<ul class="vertical">
+				<br>
+					<li><b>Empathy:</b>
+						<ul class="vertical">
+							<li>
+								<br> 
+								Please rate this doctor's level of empathy: <br />
+
+								<input type="range" value="" min="0" max="5" step=".5" onchange="ratedas.value=value">	
+								<br />
+								You are giving {{doctor}} a 
+								<output name="ratedas" type="number"></output>
+								out of 5. 
+								
+								<br> <br />
+								<label for="empathy">Please comment on this doctor's empathy levels::</label>
+								<textarea name="empathy"></textarea>
+							</li>
+						</ul>
 					<li>
-						<label for="empathy">Please rate this doctor's level of empathy:</label>
-						<textarea name="empathy"></textarea>
-					</li>
+				<br>
+					<li><b>Endo-Specific Knowledge:</b>
+						<ul class="vertical">
+							<li>
+								<br> 
+								Please rate this doctor's specific knowledge of Endometriosis: <br />
+
+								<input type="range" value="" min="0" max="5" step=".5" onchange="knowledgeRatedas.value=value">	
+								<br />
+								You are giving {{doctor}} a 
+								<output name="knowledgeRatedas" type="number"></output>
+								out of 5. 
+								
+								<br> <br />
+								<label for="specificKnowledge">How would you rate their knowledge of current treatments? <br /> Did they discuss laparascopic excision surgery, Depo, birth control, lifestyle changes, etc. ?</label>
+								<textarea name="specificKnowledge"></textarea>
+							</li>
+						</ul>
 					<li>
-						<label for="specificKnowledge">How would you rate their knowledge of current treatments? <br /> Did they discuss laparascopic excision surgery, Depo, birth control, lifestyle changes, etc. ? </label>
-						<textarea name="specificKnowledge"></textarea>
+				<br>
+					<li><b>Expectations going in:</b>
+						<ul class="vertical">
+							<li>
+								<br> 
+								<label for="expectations">What treatment did you seek?</label>
+								<textarea name="expectations"></textarea>
+							</li>
+						</ul>
 					</li>
-					<li>
-						<label for="expectations">What treatment did you seek?</label>
-						<textarea name="expectations"></textarea>
-					</li>
-					<li>
-						Please rate this doctor: <br />
-						
-					<input type="range" value="" min="0" max="5" step=".5" onchange="ratedas.value=value">	
-					<br />
-					You are giving {{doctor}} a 
-					<output name="ratedas" type="number"></output>
-					/ 5. 
-					</li>
-					
-					
+										
 				</ul>
 			</div>
 		</div>
-
+<br>
 		<div class="control-group">
 			<div class="controls">
 				<button type="submit" class="btn">Post Review</button>

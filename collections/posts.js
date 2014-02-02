@@ -35,10 +35,12 @@ Meteor.methods({
 		author: user.username,
 		submitted: new Date().getTime(),
 		commentsCount:0,
+		//average rating for doctor's empathy
 		totalrating: 0,
-		totalrating_possible: 0
-		//rating = 0? rating = rating? Not working :()
-		
+		totalrating_possible: 0,
+		//average rating for doctor's Endo-Specific Knowledge
+		knowledgeRating: 0,
+		knowledgeRatingRounded: 0
 	});
 		
 
