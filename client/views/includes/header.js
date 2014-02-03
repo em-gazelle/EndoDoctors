@@ -10,4 +10,29 @@ Template.header.helpers({
 		return active && 'active';
 	}
 
+		//fetch data from database: 
+	/*	var comments = Comments.find({
+			postId: comment.postId
+		}).fetch();
+*/
 });
+
+
+/*
+Meteor.methods({
+	
+	post: function(postAttributes) {
+		var user = Meteor.user(),
+			postWithSameLink = Posts.findOne({doctor: postAttributes.doctor});
+)};
+
+
+*/
+
+/*
+Template.header.events({
+	var searchInfo = document.getElementById("searchInfo");
+	console.log("my HTML input text shows up as a variable if: " + searchInfo);
+});
+
+*/

@@ -57,11 +57,13 @@
 <form action="" class="navbar-form navbar-right">
    <div class="input-group">
        <ul class="nav pull-right">
-       <li> <input type="Search" placeholder="Doctor's Zip Code" class="form-control" />
-       </li> <li>
-       <div class="input-group-btn"> 
-          <button class="btn disabled">Search!
-           </button>
+       <li> 
+          <input type="Search" placeholder="Doctor's Name" class="form-control" name="search" id="searchInfo" class="searchInfo"/>
+       </li> 
+       <li>
+          <div class="input-group-btn"> 
+          <a href="{{pathFor 'searchPage'}}"> <button class="btn disabled">Search!
+          </button> </a>
        </li>
        </div>
    </div>
