@@ -7,15 +7,19 @@ Meteor.methods({
 		var user = Meteor.user();
 		var post = Posts.findOne(commentAttributes.postId);
 
-/* ERROR REPORTING -- REMOVED, TEMPORARILY, FOR DEBUGGING AND CHANGING BODY TO EMPATHY PURPOSES
+/// ERROR REPORTING -- REMOVED, TEMPORARILY, FOR DEBUGGING AND CHANGING BODY TO EMPATHY PURPOSES
 
 		if (!user)
 			{throw new Meteor.Error(401, "Please login to submit a review."); }
-		if (!commentAttributes.body)
-			{throw new Meteor.Error(422, "Oops. Please finish writing your review!"); }
+		
+		if ((!commentAttributes.ratedas) || (!commentAttributes.knowledgeRatedas) || (!commentAttributes.empathy)
+			 || (!commentAttributes.specificKnowledge) || (!commentAttributes.expectations))
+			{throw new Meteor.Error(422, "Please answer all questions and ratings to submit this review."); }
+
+
 		if (!commentAttributes.postId)
 			{throw new Meteor.Error(422, "You must review a doctor."); }
-*/
+
 		comment = _.extend(_.pick(commentAttributes, 'postId', 'empathy', 'specificKnowledge', 'expectations', 'ratedas', 'knowledgeRatedas'), {
 			userId: user._id,
 			author: user.username,
@@ -30,7 +34,7 @@ Meteor.methods({
 		Comments.insert(comment);
 
 
-		//finding the average rating
+		//fetching data from database to find the average rating
 		var comments = Comments.find({
 			postId: comment.postId
 		}).fetch();
@@ -55,7 +59,7 @@ Meteor.methods({
 			$set: {totalrating: totalrating},
 		});
 
-//empathy rounded:
+	//empathy rounded:
 		var totalrating_possible = Math.round(totalrating*10) /10;
 	//	console.log("display rating rounded = " + totalrating_possible);
 
@@ -63,28 +67,13 @@ Meteor.methods({
 			$set: {totalrating_possible: totalrating_possible},
 		});
 
-
-
-//100% failure rate :(
-//finding average rating for Endo-Specific KNowledge:
-//		var knowledgeRatedas = Number(knowledgeRatedas);
-//		var knowledgeRatedas = Math.floor(knowledgeRatedas);
-//		var knowledgeRatedas = Number(comment.knowledgeRatedas);
-//		var knowledgeRatedas = Math.floor("knowledgeRatedas"); 
-
-
-
+//Endo-Specific Knowledge: Finding the average rating
+		//finding total sum of all ratings in the comments. adds newest rating to total suml sum stored in database
 		var knowlSum = _.reduce(comments, function(knowlTotal, comment) {
-		//	console.log(comment.ratedas);
-		//	console.log(_.isString(comment.ratedas));
 			return knowlTotal + Number(comment.knowledgeRatedas);
 		}, 0);
 
-		//tests to debug average rating system
-	//	console.log(comments);
-	//	console.log("sum: " + sum);
-	//	console.log(comments.length);
-
+		//finding average: dividing sum by # of reviews
 		var knowledgeRating = knowlSum / comments.length ;
 		//	console.log("totalrating: " + totalrating);
 
@@ -92,10 +81,9 @@ Meteor.methods({
 			$set: {knowledgeRating: knowledgeRating}
 		});
 
-//empathy rounded:
-		var knowledgeRatingRounded = Math.round(knowledgeRatingRounded*10) /10;
-	//	console.log("display rating rounded = " + totalrating_possible);
-
+		//rounding the average to one decimal place for display:
+		var knowledgeRatingRounded = Math.round(knowledgeRating*10) /10;
+		
 		Posts.update(comment.postId, {
 			$set: {knowledgeRatingRounded: knowledgeRatingRounded}
 		});

@@ -2,6 +2,11 @@ Template.postItem.helpers({
 	ownPost: function() {
 		return this.userId == Meteor.userId();
 	},
+
+//	if (commentsCount === 0) {
+//		throwError: 
+//	}
+
 /*	domain: function() {
 		var a = document.createElement('a');
 		a.href = this.url;

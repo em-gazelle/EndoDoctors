@@ -21,8 +21,8 @@ Meteor.methods({
 {		throw new Meteor.Error(401, "Sorry! You need to login to review a doctor.");
 
 }	//post must have a Dr's name
-	if (!postAttributes.doctor)
-{		throw new Meteor.Error(422, "Please add the name of the doctor you wish to review.");
+	if ((!postAttributes.doctor) || (!postAttributes.doctor_location) || (!postAttributes.clinic))
+{		throw new Meteor.Error(422, "Please provide all identifying information for this doctor to help future patients identify your doctor.");
 }
 	//no repeats - doc name
 	//!!!!!!!!!! will need more work in future. find a way to differentiate amongst doctors

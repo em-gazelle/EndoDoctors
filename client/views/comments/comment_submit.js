@@ -22,13 +22,11 @@ Template.commentSubmit.events({
 
 
     Meteor.call('comment', comment, function(error, commentId) {
-    /* COMMENTED OUT WHILE DEBUGGING/CHANGING NAME FROM BODY TO EMPATHY
       if (error){
         throwError(error.reason);
       } else {
         $body.val('');
       }
-    */
     });
   }
 });
